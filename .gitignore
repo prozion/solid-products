@@ -1,0 +1,6 @@
+rsconnect
+*.raw
+output
+report.0.rdf
+validator.log
+*byhand.ttl

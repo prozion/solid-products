@@ -1,0 +1,32 @@
+@prefix : <https://purl.org/prozion/solid_products_shapes#> . 
+@prefix gr: <https://www.heppnetz.de/ontologies/goodrelations/v1.html#> .
+@prefix owl: <http://www.w3.org/2002/07/owl> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix solid-products: <https://purl.org/prozion/solid_products#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+:
+  rdf:type owl:Ontology .
+
+:ProductOrServiceShape
+  rdf:type sh:NodeShape ;
+  sh:targetClass gr:ProductOrService ;
+  sh:property :ProductOrServiceShape_3, :ProductOrServiceShape_2, :ProductOrServiceShape_1 .
+
+:ProductOrServiceShape_1
+  sh:minCount 1 ;
+  sh:path schema:name ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_2
+  sh:path schema:description ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_3
+  sh:path schema:logo ;
+  sh:nodeKind sh:IRI .
+

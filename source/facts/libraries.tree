@@ -1,0 +1,2 @@
+solid_libraries +a:DeveloperTool
+	Tripledoc s/name:"Tripledoc" s/description:"A library for easy manipulation of RDF." s/logo:"https://vincenttunru.gitlab.io/tripledoc/img/undraw_hiring_cyhs.svg"

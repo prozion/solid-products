@@ -1,0 +1,70 @@
+@prefix : <https://purl.org/prozion/solid_products#> . 
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gr: <https://www.heppnetz.de/ontologies/goodrelations/v1.html#> .
+@prefix pto: <http://www.productontology.org/id/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <https://schema.org/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+
+:
+  rdf:type void:Dataset, pto:Knowledge_graph .
+
+:Application
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Product .
+
+:CommunicationChannel
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Service .
+
+:DeveloperTool
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Product .
+
+gr:ProductOrService
+  rdf:type rdfs:Class .
+
+:InformationResource
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Service .
+
+:OnboardingResource
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Service .
+
+:Product
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf s:Product, gr:ProductOrService .
+
+:Server
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Product .
+
+:Service
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf s:Service, gr:ProductOrService .
+
+:SolidIdentityProvider
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Service .
+
+:SolidOS
+  rdf:type :Application ;
+  s:name "SolidOS" ;
+  s:description "The operating system for Solid." .
+
+:StorageProvider
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Service .
+
+:Tripledoc
+  rdf:type :DeveloperTool ;
+  s:name "Tripledoc" ;
+  s:description "A library for easy manipulation of RDF." ;
+  s:logo <https://vincenttunru.gitlab.io/tripledoc/img/undraw_hiring_cyhs.svg> .
+

@@ -1,0 +1,16 @@
+solid_products_knowledge_graph a:void/Dataset,pto/Knowledge_graph ns:https://purl.org/prozion/solid_products#
+	namespaces
+		doap ns:http://usefulinc.com/ns/doap#
+		foaf ns:http://xmlns.com/foaf/0.1/
+		gr ns:https://www.heppnetz.de/ontologies/goodrelations/v1.html#
+		pto ns:http://www.productontology.org/id/
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		s ns:https://schema.org/
+		sioc ns:http://rdfs.org/sioc/ns#
+		xsd ns:http://www.w3.org/2001/XMLSchema#
+		void ns:http://rdfs.org/ns/void#
+	[ontologies/product_service.tree]
+	individuals
+		[facts/apps.tree]
+		[facts/libraries.tree]

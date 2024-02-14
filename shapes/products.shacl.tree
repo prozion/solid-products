@@ -1,0 +1,38 @@
+products_shape a:owl/Ontology ns:https://purl.org/prozion/solid_products_shapes# 
+	namespaces
+		gr ns:https://www.heppnetz.de/ontologies/goodrelations/v1.html#
+		owl ns:http://www.w3.org/2002/07/owl
+		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
+		schema ns:https://schema.org/
+		sh ns:http://www.w3.org/ns/shacl#
+		solid-products ns:https://purl.org/prozion/solid_products#
+		xsd ns:http://www.w3.org/2001/XMLSchema#
+	individuals
+		ProductOrServiceShape a:sh/NodeShape sh/targetClass:gr/ProductOrService sh/property:_1,_2,_3
+			;; From https://github.com/solid-contrib/practitioners/blob/main/working-groups/shape-for-products-and-services/basic-shape.md
+			; s:name                 #
+			_1 sh/path:schema/name sh/minCount:1 sh/datatype:xsd/string
+			
+			; s:description          #
+			_2 sh/path:schema/description sh/datatype:xsd/string
+			
+			; s:logo                 # 
+			_3 sh/path:schema/logo sh/nodeKind:sh/IRI
+			; s:screenshot           #
+			; s:audience             # social audience, see below for geographic
+			; s:areaServed           # geo region, use standard codes
+			; s:availableLanguage    # human language, use standard codes
+			; s:isAccessibleForFree  # boolean
+			; s:license              # an open source license or "proprietary"
+			; s:provider             # agent who creates service
+			; s:manufacturer         # agent who creates product
+			; s:status               # Exploration,Development,Production,Archived
+			; s:programmingLanguage  # 
+			; s:operatingSystem      # 
+			; d:implements           # IRI of a specification
+			; d:homepage             # 
+			; d:repository           # 
+			; d:download-page        # 
+			; d:bug-database         # 
+			; d:service-endpoint     # 

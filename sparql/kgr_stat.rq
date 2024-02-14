@@ -1,0 +1,9 @@
+prefix : <https://purl.org/prozion/solid_products#>
+
+select (count(*) as ?triples)
+       (count(distinct(?s)) as ?subjects)
+       (count(distinct(?p)) as ?predicates)
+       (count(distinct(?o)) as ?objects)
+where {
+  ?s ?p ?o .
+}

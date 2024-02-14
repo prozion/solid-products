@@ -1,0 +1,16 @@
+classes +a:rdfs/Class +hi-inv-rel:subclass-of
+	gr/ProductOrService
+		Product subclass-of:s/Product
+		Service subclass-of:s/Service
+	Product
+		Application
+		DeveloperTool
+		Server
+	Service
+		CommunicationChannel
+		InformationResource
+		OnboardingResource
+		SolidIdentityProvider
+		StorageProvider
+properties +a:rdf/Property +hi-inv-rel:subproperty-of
+	

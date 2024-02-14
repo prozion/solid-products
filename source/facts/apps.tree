@@ -1,0 +1,2 @@
+solid_apps +a:Application
+	SolidOS s/name:"SolidOS" s/description:"The operating system for Solid."
