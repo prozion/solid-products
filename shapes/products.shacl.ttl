@@ -1,6 +1,9 @@
 @prefix : <https://purl.org/prozion/solid_products_shapes#> . 
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gr: <https://www.heppnetz.de/ontologies/goodrelations/v1.html#> .
-@prefix owl: <http://www.w3.org/2002/07/owl> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -13,20 +16,102 @@
   rdf:type owl:Ontology .
 
 :ProductOrServiceShape
-  rdf:type sh:NodeShape ;
+  sh:closed true ;
+  sh:property :ProductOrServiceShape_1, :ProductOrServiceShape_10, :ProductOrServiceShape_11, :ProductOrServiceShape_12, :ProductOrServiceShape_13, :ProductOrServiceShape_14, :ProductOrServiceShape_15, :ProductOrServiceShape_16, :ProductOrServiceShape_17, :ProductOrServiceShape_18, :ProductOrServiceShape_19, :ProductOrServiceShape_2, :ProductOrServiceShape_20, :ProductOrServiceShape_21, :ProductOrServiceShape_22, :ProductOrServiceShape_3, :ProductOrServiceShape_4, :ProductOrServiceShape_5, :ProductOrServiceShape_6, :ProductOrServiceShape_7, :ProductOrServiceShape_8, :ProductOrServiceShape_9 ;
+  sh:ignoredProperties (rdf:type) ;
   sh:targetClass gr:ProductOrService ;
-  sh:property :ProductOrServiceShape_3, :ProductOrServiceShape_2, :ProductOrServiceShape_1 .
+  rdf:type sh:NodeShape .
 
 :ProductOrServiceShape_1
   sh:minCount 1 ;
   sh:path schema:name ;
   sh:datatype xsd:string .
 
+:ProductOrServiceShape_10
+  sh:path schema:provider ;
+  sh:class foaf:Agent .
+
+:ProductOrServiceShape_11
+  sh:path schema:manufacturer ;
+  sh:class foaf:Agent .
+
+:ProductOrServiceShape_12
+  sh:pattern "Exploration|Development|Production|Archived" ;
+  sh:path schema:status ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_13
+  sh:path schema:programmingLanguage ;
+  sh:class schema:ComputerLanguage .
+
+:ProductOrServiceShape_14
+  sh:path schema:operatingSystem ;
+  sh:class schema:SoftwareApplication .
+
+:ProductOrServiceShape_15
+  sh:path doap:implements ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_16
+  sh:path doap:homepage ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_17
+  sh:path doap:repository ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_18
+  sh:path doap:download-page ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_19
+  sh:path doap:bug-database ;
+  sh:class doap:Project .
+
 :ProductOrServiceShape_2
   sh:path schema:description ;
   sh:datatype xsd:string .
 
+:ProductOrServiceShape_20
+  sh:path doap:service-endpoint ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_21
+  sh:path schema:maintainer ;
+  sh:class foaf:Agent .
+
+:ProductOrServiceShape_22
+  sh:path schema:creator ;
+  sh:class schema:Person .
+
 :ProductOrServiceShape_3
   sh:path schema:logo ;
   sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_4
+  sh:path schema:screenshot ;
+  sh:nodeKind sh:IRI .
+
+:ProductOrServiceShape_5
+  sh:path schema:audience ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_6
+  sh:pattern "[A-Z]{3}" ;
+  sh:path schema:areaServed ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_7
+  sh:pattern "[a-z]{2}(-[a-z]{2})?" ;
+  sh:path schema:availableLanguage ;
+  sh:datatype xsd:string .
+
+:ProductOrServiceShape_8
+  sh:path schema:isAccessibleForFree ;
+  sh:datatype xsd:boolean .
+
+:ProductOrServiceShape_9
+  sh:maxCount 1 ;
+  sh:path schema:license ;
+  sh:datatype xsd:string .
 

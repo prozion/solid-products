@@ -4,13 +4,16 @@ classes +a:rdfs/Class +hi-inv-rel:subclass-of
 		Service subclass-of:s/Service
 	Product
 		Application
-		DeveloperTool
+		DeveloperTool subclass-of:pto/Programming_tool
 		Server
 	Service
 		CommunicationChannel
 		InformationResource
 		OnboardingResource
 		SolidIdentityProvider
-		StorageProvider
+		StorageProvider subclass-of:pto/Storage_server
+	foaf/Agent
+		org/Organization
+		s/Person
 properties +a:rdf/Property +hi-inv-rel:subproperty-of
 	

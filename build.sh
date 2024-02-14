@@ -6,9 +6,9 @@ VALIDATOR_PATH=$HOME/app/shacl_validator
 TARGET_TTL="$ROOT/target/solid_products.ttl"
 SHAPES_TTL="$ROOT/shapes/products.shacl.ttl"
 
-# echo ""
-# echo "* Check undeclared objects and predicates"
-# $ROOT/scripts/checks/all_undeclared.sh $ROOT
+echo ""
+echo "* Check undeclared objects and predicates"
+$ROOT/scripts/checks/all_undeclared.sh $ROOT "s/name"
 
 echo ""
 echo "* Generate RDF graph (Turtle format) from Tabtree source files"

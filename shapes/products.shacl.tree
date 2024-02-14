@@ -1,7 +1,10 @@
 products_shape a:owl/Ontology ns:https://purl.org/prozion/solid_products_shapes# 
 	namespaces
+		doap ns:http://usefulinc.com/ns/doap#
+		foaf ns:http://xmlns.com/foaf/0.1/
 		gr ns:https://www.heppnetz.de/ontologies/goodrelations/v1.html#
-		owl ns:http://www.w3.org/2002/07/owl
+		org ns:http://www.w3.org/ns/org#
+		owl ns:http://www.w3.org/2002/07/owl#
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
 		schema ns:https://schema.org/
@@ -9,7 +12,7 @@ products_shape a:owl/Ontology ns:https://purl.org/prozion/solid_products_shapes#
 		solid-products ns:https://purl.org/prozion/solid_products#
 		xsd ns:http://www.w3.org/2001/XMLSchema#
 	individuals
-		ProductOrServiceShape a:sh/NodeShape sh/targetClass:gr/ProductOrService sh/property:_1,_2,_3
+		ProductOrServiceShape a:sh/NodeShape sh/targetClass:gr/ProductOrService sh/closed:true sh/ignoredProperties:`rdf/type` hi-rel:sh/property
 			;; From https://github.com/solid-contrib/practitioners/blob/main/working-groups/shape-for-products-and-services/basic-shape.md
 			; s:name                 #
 			_1 sh/path:schema/name sh/minCount:1 sh/datatype:xsd/string
@@ -19,20 +22,64 @@ products_shape a:owl/Ontology ns:https://purl.org/prozion/solid_products_shapes#
 			
 			; s:logo                 # 
 			_3 sh/path:schema/logo sh/nodeKind:sh/IRI
+			
 			; s:screenshot           #
+			_4 sh/path:schema/screenshot sh/nodeKind:sh/IRI
+			
 			; s:audience             # social audience, see below for geographic
+			; DS: if instead: `sh/datatype:schema/Text`? How it will be checked by a validator? Does it have access to schema ontology? How it then will recognize that random string is also of schema/Text datatype as it's not specified any further in schema?
+			_5 sh/path:schema/audience sh/datatype:xsd/string
+			
 			; s:areaServed           # geo region, use standard codes
+			_6 sh/path:schema/areaServed sh/datatype:xsd/string sh/pattern:"[A-Z]{3}"
+			
 			; s:availableLanguage    # human language, use standard codes
+			_7 sh/path:schema/availableLanguage sh/datatype:xsd/string sh/pattern:"[a-z]{2}(-[a-z]{2})?"
+			
 			; s:isAccessibleForFree  # boolean
+			_8 sh/path:schema/isAccessibleForFree sh/datatype:xsd/boolean
+			
 			; s:license              # an open source license or "proprietary"
+			; DS: probably License class?
+			_9 sh/path:schema/license sh/maxCount:1 sh/datatype:xsd/string
+			
 			; s:provider             # agent who creates service
+			_10 sh/path:schema/provider sh/class:foaf/Agent
+			
 			; s:manufacturer         # agent who creates product
+			; DS: use s:creator instead?
+			_11 sh/path:schema/manufacturer sh/class:foaf/Agent
+			
 			; s:status               # Exploration,Development,Production,Archived
+			_12 sh/path:schema/status sh/datatype:xsd/string sh/pattern:"Exploration|Development|Production|Archived"
+			
 			; s:programmingLanguage  # 
+			_13 sh/path:schema/programmingLanguage sh/class:schema/ComputerLanguage
+			
 			; s:operatingSystem      # 
+			_14 sh/path:schema/operatingSystem sh/class:schema/SoftwareApplication
+			
 			; d:implements           # IRI of a specification
+			_15 sh/path:doap/implements sh/nodeKind:sh/IRI
+			
 			; d:homepage             # 
+			_16 sh/path:doap/homepage sh/nodeKind:sh/IRI
+			
 			; d:repository           # 
+			_17 sh/path:doap/repository sh/nodeKind:sh/IRI
+			
 			; d:download-page        # 
+			_18 sh/path:doap/download-page sh/nodeKind:sh/IRI
+			
 			; d:bug-database         # 
+			_19 sh/path:doap/bug-database sh/class:doap/Project
+			
 			; d:service-endpoint     # 
+			_20 sh/path:doap/service-endpoint sh/nodeKind:sh/IRI
+			
+			;; also (from https://github.com/solid/solidproject.org/discussions/783)
+			; s:maintainer 
+			_21 sh/path:schema/maintainer sh/class:foaf/Agent
+
+			; s:creator
+			_22 sh/path:schema/creator sh/class:schema/Person

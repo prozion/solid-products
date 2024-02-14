@@ -1,2 +1,3 @@
-solid_libraries +a:DeveloperTool
+solid_libraries +a:DeveloperTool +s/isAccessibleForFree:true
+	Comunica s/name:"Comunica" s/programmingLanguage:JavaScript doap/repository:https://github.com/comunica/comunica s/creator:Ruben_Taelman s/manufacturer:Wout_Schellaert,Joachim_van_Herwegen,Thomas_Tanon,Jitse_de_Smet,Jesse_Wright,Jacopo_Scazzosi,Ruben_Verborgh s/description:"A knowledge graph querying framework for JavaScript."
 	Tripledoc s/name:"Tripledoc" s/description:"A library for easy manipulation of RDF." s/logo:"https://vincenttunru.gitlab.io/tripledoc/img/undraw_hiring_cyhs.svg"

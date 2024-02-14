@@ -2,7 +2,10 @@ solid_products_knowledge_graph a:void/Dataset,pto/Knowledge_graph ns:https://pur
 	namespaces
 		doap ns:http://usefulinc.com/ns/doap#
 		foaf ns:http://xmlns.com/foaf/0.1/
+		doap ns:http://usefulinc.com/ns/doap#
+		foaf ns:http://xmlns.com/foaf/0.1/
 		gr ns:https://www.heppnetz.de/ontologies/goodrelations/v1.html#
+		org ns:http://www.w3.org/ns/org#
 		pto ns:http://www.productontology.org/id/
 		rdf ns:http://www.w3.org/1999/02/22-rdf-syntax-ns#
 		rdfs ns:http://www.w3.org/2000/01/rdf-schema#
@@ -13,4 +16,6 @@ solid_products_knowledge_graph a:void/Dataset,pto/Knowledge_graph ns:https://pur
 	[ontologies/product_service.tree]
 	individuals
 		[facts/apps.tree]
+		[facts/languages.tree]
 		[facts/libraries.tree]
+		[facts/people.tree]

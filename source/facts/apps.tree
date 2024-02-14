@@ -1,2 +1,3 @@
-solid_apps +a:Application
+solid_apps +a:Application +s/isAccessibleForFree:true
+	Darcy s/name:"Darcy.is" doap/homepage:https://darcy.is doap/repository:https://github.com/Darcy-Social s/creator:Christian_Buggedei
 	SolidOS s/name:"SolidOS" s/description:"The operating system for Solid."

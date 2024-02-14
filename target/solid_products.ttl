@@ -1,7 +1,10 @@
 @prefix : <https://purl.org/prozion/solid_products#> . 
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gr: <https://www.heppnetz.de/ontologies/goodrelations/v1.html#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix pto: <http://www.productontology.org/id/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,13 +21,37 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Product .
 
+:Christian_Buggedei
+  rdf:type s:Person .
+
 :CommunicationChannel
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Service .
 
+:Comunica
+  s:programmingLanguage :JavaScript ;
+  s:isAccessibleForFree true ;
+  rdf:type :DeveloperTool ;
+  s:description "A knowledge graph querying framework for JavaScript." ;
+  s:manufacturer :Jacopo_Scazzosi, :Jesse_Wright, :Jitse_de_Smet, :Joachim_van_Herwegen, :Ruben_Verborgh, :Thomas_Tanon, :Wout_Schellaert ;
+  s:creator :Ruben_Taelman ;
+  doap:repository <https://github.com/comunica/comunica> ;
+  s:name "Comunica" .
+
+:Darcy
+  doap:homepage <https://darcy.is> ;
+  s:isAccessibleForFree true ;
+  rdf:type :Application ;
+  s:creator :Christian_Buggedei ;
+  doap:repository <https://github.com/Darcy-Social> ;
+  s:name "Darcy.is" .
+
 :DeveloperTool
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Product .
+  rdfs:subClassOf pto:Programming_tool, :Product .
+
+foaf:Agent
+  rdf:type rdfs:Class .
 
 gr:ProductOrService
   rdf:type rdfs:Class .
@@ -33,13 +60,43 @@ gr:ProductOrService
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Service .
 
+:Jacopo_Scazzosi
+  rdf:type s:Person .
+
+:JavaScript
+  s:name "JavaScript" ;
+  rdf:type s:ComputerLanguage .
+
+:Jesse_Wright
+  rdf:type s:Person .
+
+:Jitse_de_Smet
+  rdf:type s:Person .
+
+:Joachim_van_Herwegen
+  rdf:type s:Person .
+
 :OnboardingResource
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Service .
 
+org:Organization
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf foaf:Agent .
+
 :Product
   rdf:type rdfs:Class ;
   rdfs:subClassOf s:Product, gr:ProductOrService .
+
+:Ruben_Taelman
+  rdf:type s:Person .
+
+:Ruben_Verborgh
+  rdf:type s:Person .
+
+s:Person
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf foaf:Agent .
 
 :Server
   rdf:type rdfs:Class ;
@@ -55,16 +112,24 @@ gr:ProductOrService
 
 :SolidOS
   rdf:type :Application ;
+  s:isAccessibleForFree true ;
   s:name "SolidOS" ;
   s:description "The operating system for Solid." .
 
 :StorageProvider
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Service .
+  rdfs:subClassOf pto:Storage_server, :Service .
+
+:Thomas_Tanon
+  rdf:type s:Person .
 
 :Tripledoc
   rdf:type :DeveloperTool ;
+  s:isAccessibleForFree true ;
   s:name "Tripledoc" ;
   s:description "A library for easy manipulation of RDF." ;
   s:logo <https://vincenttunru.gitlab.io/tripledoc/img/undraw_hiring_cyhs.svg> .
+
+:Wout_Schellaert
+  rdf:type s:Person .
 
